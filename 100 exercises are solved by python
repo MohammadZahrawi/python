@@ -1,0 +1,237 @@
+# 1. find all such numbers which are divisible by 7 but are not a multiple of 5,
+# between 2000 and 3200 (both included).
+def number_divisible():
+    number_list = []
+    for x in range(2000, 3200):
+        if x % 7 == 0 and x % 5 != 0:
+            number_list.append(x)
+    print('All number which divisible by 7 but not by 5')
+    print(number_list)
+
+# 2. Write a program which can compute the factorial of a given numbers.
+def factorial():
+    x = input('Enter a number to find its factorial ')
+    y = int(x)
+    fact = 1
+    while y > 1:
+        fact = y * fact
+        y = y - 1
+    return fact
+
+# 3. With a given integral number n, write a program to generate a dictionary that contains (i, i*i)
+def square():
+    square_list = {}
+    num_limit = int(input('enter limit number for your dict'))
+    for x in range(1, num_limit + 1):
+        square_list[x] = x * x
+    print(square_list)
+
+# 4. Write a program which accepts a sequence of comma-separated numbers from console
+# and generate a list and a tuple which contains every number.
+def randomaa():
+    values = input('enter values')
+    li = values.split(",")
+    t = tuple(li)
+    print(li)
+    print(t)
+
+# 5. Define a class which has at least two methods: getString: to get a string from console input
+# printString: to print the string in upper case
+class PrintString:
+    def __init__(self):
+        self.x = ''
+
+    def getString(self):
+        self.x = input('enter string')
+
+    def showString(self):
+        print(self.x.upper())
+
+# newString=PrintString()
+# newString.getString()
+# newString.showString()
+
+# 6. Write a program that calculates and prints the value according to the given formula:
+# Q = Square root of [(2 * C * D)/H], Following are the fixed values of C and H:
+# C is 50. H is 30.
+def calFormula():
+    print('lets assume C=50, H=30')
+    C = 50
+    H = 30
+    D=input('enter values of D in comma separated sequence')
+    D=D.split(',')
+    for value in D:
+        x=((2*C*int(value))/H)**0.5
+        print(round(x))
+
+# 7. Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array.
+# The element value in the i-th row and j-th column of the array should be i*j.
+
+# 8.Write a program that accepts a comma separated sequence of words as input and prints
+# the words in a comma-separated sequence after sorting them
+def sort_sequence():
+    seq=input('enter works that separated by commas').split(',')
+    seq.sort()
+    print(','.join(seq))
+
+# 9.Write a program that accepts sequence of lines as input and prints the lines after making
+# all characters in the sentence capitalized.
+def capitalization():
+    cap=input('enter many lines to capitalize them')
+    print(cap.upper())
+
+# 10.Write a program that accepts a sequence of whitespace separated words as input and prints
+# the words after removing all duplicate words and sorting them alphanumerically.
+def removingDublicating():
+    removeDublicate=input('enter text').split(' ')
+    print(removeDublicate)
+    a=sorted(set(removeDublicate))
+    print(a)
+
+# 11. Write a program which accepts a sequence of comma separated 4 digit binary numbers as its
+# input and then check whether they are divisible by 5 or not. The numbers that are divisible by
+# 5 are to be printed in a comma separated sequence.
+def binary_4digits():
+    x=input('enter sequence of binary number separated by comma').split(',')
+    binary_num=[]
+    for number in x:
+        intp=int(number,2)
+        if intp%5==0:
+            binary_num.append(intp)
+    print(binary_num)
+
+# 12.Write a program, which will find all such numbers between 1000 and 3000
+# (both included) such that each digit of the number is an even number.
+def even_numb():
+    evenList=[]
+    for x in range (999,3001):
+        s=str(x)
+
+        if int(s[0])%2==0 and int(s[1])%2==0 and int(s[2])%2==0 and int(s[3])%2==0:
+            evenList.append(s)
+            print(','.join(evenList))
+
+# 13.Write a program that accepts a sentence and calculate the number of letters and digits.
+def countLetters():
+    letterCount=0
+    numberCount=0
+    x=input('enter text')
+    print(x)
+    for di in x:
+        if di.isalpha():
+            letterCount+=1
+        if di.isdigit():
+            numberCount+=1
+    print('number of letters in text are ',letterCount)
+    print('number of numbers in text are ', numberCount)
+
+
+# 14.Write a program that accepts a sentence and calculate the number of
+# upper case letters and lower case letters.
+def determineUpper():
+    text=input('enter text to counts capital letters and small')
+    upperLetter=0
+    lowerLetter=0
+    for x in text:
+        if x.islower():
+            lowerLetter+=1
+        if x.isupper():
+            upperLetter+=1
+    print('number of capital letters are ',upperLetter)
+    print('number of small letters are ',lowerLetter)
+
+# 15.Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.
+# Suppose the following input is supplied to the program: 9  Then, the output should be: 11106
+def valueOfa():
+    x=input('enter equations consists of "a" ')
+    newList=[]
+    for val in x:
+        if val=='a':
+            newList.append('9')
+        if val=='+':
+            newList.append('+')
+    result=''
+    for items in newList:
+        result=result+items
+    result=result.split('+')
+    final=0
+    for new_items in result:
+        final=final+int(new_items)
+    print(final)
+    print(result)
+
+# 16.Use a list comprehension to square each odd number in a list. The list is input by
+# a sequence of comma-separated numbers. Suppose the following input is supplied to the program:
+# 1,2,3,4,5,6,7,8,9 Then, the output should be: 1,3,5,7,9
+def oddeven():
+    oddList=[]
+    x = input('enter numbers separated by comma').split(',')
+    for item in x:
+        if int(item)%2==1:
+            oddList.append(int(item))
+    newList=list(map(lambda var:var*var,oddList))
+    print(newList)
+
+# 17.Write a program that computes the net amount of a bank account based a transaction log
+# from console input. The transaction log format is shown as following: D 100 W 200
+# means deposit while W means withdrawal. Suppose the following input is supplied to the program:
+#D 300  D 300  W 200   D 100  Then, the output should be:  500
+def bankaccount():
+    summation = 0
+    while True:
+        x=input('enter transction log enter q to finish')
+        if x[0]=='D':
+            summation+=int(x[1:])
+        if x[0]=='W':
+            summation-=int(x[1:])
+        if x=='q':
+            break
+    print(summation)
+
+# 18.ite a program to check the validity of password input by users.
+# Following are the criteria for checking the password:
+# 1. At least 1 letter between [a-z]  2. At least 1 number between [0-9] 3. At least 1 letter between [A-Z]
+# 4. At least 1 character from [$#@] 5. Minimum length of transaction password: 6
+# 5. Maximum length of transaction password: 12
+# Your program should accept a sequence of comma separated passwords and will check them according
+# to the above criteria. Passwords that match the criteria are to be printed, each separated by a comma.
+def password():
+    x=input('enter passord separated by comma').split(',')
+    match_password=[]
+    for item in x:
+        lowerletter = False
+        upperletter = False
+        character = False
+        numberdigit = False
+        length_password = False
+        for subitem in item:
+            if subitem.isupper():
+                upperletter=True
+            if subitem.islower():
+                lowerletter=True
+            if subitem.isdigit():
+                numberdigit=True
+            if not subitem.isalpha() and not subitem.isdigit():
+                character=True
+        if len(item)>5 and len(item)<13:
+            length_password=True
+        if upperletter and lowerletter and numberdigit and character and length_password:
+            match_password.append(item)
+    print(match_password)
+    print('Finish')
+
+# 19.You are required to write a program to sort the (name, age, height) tuples by ascending order
+# where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
+# 1: Sort based on name;  2: Then sort based on age; 3: Then sort by score.
+# The priority is that name > age > score.
+def info_sorted():
+    print('q to finish')
+    new_list=[]
+    while True:
+        x=input('enter name, age and height').split(' ')
+        if x[0]=='q':
+            break
+        new_list.append(tuple(x))
+        print(new_list)
+    print('wow')
+info_sorted()
